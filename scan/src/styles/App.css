@@ -1,0 +1,11 @@
+.app {
+  display: grid;
+  grid-template-areas: 
+  "header header" 
+  "home   home"
+  "footer footer";
+
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  /* grid-gap: 10px; */
+}

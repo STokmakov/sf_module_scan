@@ -1,0 +1,11 @@
+.imglogoheader {
+  grid-area: imglogo;
+}
+
+.imglogoheader_container { 
+  margin: 2px 60px;
+}
+
+.imglogoheader_container_img {
+  width: 141;
+}

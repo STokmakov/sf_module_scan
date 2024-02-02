@@ -1,0 +1,23 @@
+.address {
+  grid-area: address;  
+}
+
+.address_container {
+  margin: 25px 60px;
+}
+
+.address_container_text  {
+  text-align: right;
+  color: white;
+  font-family:'inter-light';
+  font-style: normal;
+  font-size: 90%;
+}
+
+.address_container_text_copyright {
+  text-align: right;
+  color: white;
+  font-family:'inter-light';
+  font-style: normal;
+  font-size: 80%;
+}
