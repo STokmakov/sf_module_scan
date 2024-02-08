@@ -1,0 +1,11 @@
+.imglogo {
+  grid-area: imglogo;
+}
+
+.imglogo_container { 
+  margin: 2px 60px;
+}
+
+.imglogo_container_img {
+  width: 141;
+}

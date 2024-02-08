@@ -1,11 +1,12 @@
 .app {
+  margin: 0 auto;
   display: grid;
+  width: 1200px;
   grid-template-areas: 
-  "header header" 
-  "home   home"
-  "footer footer";
+  "header" 
+  "main"
+  "footer";
 
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
-  /* grid-gap: 10px; */
+  grid-template-rows: 150px 4fr 150px;
+  grid-template-columns: 1fr;
 }

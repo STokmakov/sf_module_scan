@@ -1,19 +1,19 @@
-import { configureStore } from "@reduxjs/toolkit";
-import tokenReducer from "@store/tokenSlice";
-import storage from 'redux-persist/lib/storage';
-import { persistReducer, persistStore } from 'redux-persist';
+import {applyMiddleware, combineReducers, createStore} from "redux";
+import appReducer from "@store/app-reducer";
+import authReducer from "@store/auth-reducer";
+import userReducer from "@store/user-reducer";
+import thunkMiddleware, {ThunkAction} from 'redux-thunk';
+import { reducer as formReducer } from 'redux-form'
 
+let reducers = combineReducers({
+  app: appReducer,
+  token: authReducer,
+  user: userReducer,
+  form: formReducer
+});
 
-const persistConfig = {
-  key: 'root',
-  storage,
-}
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(reducers,  composeEnhancers(applyMiddleware(thunkMiddleware)));
+window.__store__ = store;
 
-const persistedReducer = persistReducer(persistConfig, tokenReducer)
-
-export const store = configureStore({
-  reducer: persistedReducer,
-  devTools: process.env.NODE_ENV !== 'production'
-})
-
-export const persistor = persistStore(store)
+export { store }

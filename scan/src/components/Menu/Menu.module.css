@@ -1,4 +1,5 @@
 .menu {
+    grid-area: menu;
     position: absolute;
     top: 36px;
     left: 602px;
@@ -6,9 +7,6 @@
 
 .menuList {
     list-style: none;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
 }
 
 .menuItem + .menuItem {

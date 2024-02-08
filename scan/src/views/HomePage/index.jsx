@@ -5,10 +5,7 @@ import React from "react";
 
 function HomePage() {
   return (
-      <container >
-        
-
-      </container>
+      <div>sdf</div>
   );
 }
 

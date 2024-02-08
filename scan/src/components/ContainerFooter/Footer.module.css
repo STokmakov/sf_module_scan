@@ -8,10 +8,10 @@
   justify-self: center; 
   align-self: center;
   grid-template-areas: 
-  "imglogo . . . . . . . address address address address";
+  "imglogo address address address address address";
 
 
   grid-template-rows: 1fr;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(6, 1fr);
 
 }
