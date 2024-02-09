@@ -4,7 +4,7 @@ import {instance} from "./api";
 
 export const authAPI = {
     
-    me(token) {
+    info(token) {
         const config = {
             headers: { Authorization: `Bearer ${token}` }
         };
@@ -16,8 +16,6 @@ export const authAPI = {
           .catch((e) => console.log("Failed receiving data..."));
       },
 
-    
-        // .then(res => res.data
     
     login(login, password) {
         return instance.post(`account/login`, {login, password})

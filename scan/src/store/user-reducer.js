@@ -26,10 +26,9 @@ export const setAuthUserData =
   
 export const getAuthUserData = (token) => async (dispatch) => {
    
-    let response = await authAPI.me(token)
+    let response = await authAPI.info(token)
     console.log(response)
       }
-
 
 
 export default userReducer;

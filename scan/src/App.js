@@ -41,9 +41,10 @@ class App extends Component {
                         <div className='app-wrapper-content'>
                         {this.props.isAuth}
                         <Routes> 
-                        
                               <Route path="/" element={<MainContainer />} /> 
-                              <Route path="/login" element={<Login />} />                            
+                              <Route path="/login" element={<LoginContainer />} />   
+                              <Route path="/search" element={<SearchContainer />} />   
+                              <Route path="/result" element={<ResultContainer />} />              
                         </Routes>
                       
                         </div>

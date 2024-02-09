@@ -2,27 +2,7 @@ import css from './Info.module.css'
 import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 
-const Info = ({token}) => {
-    const [info, setInfo] = useState(null)
-
-const [userName, setUserName] = useState(localStorage.getItem("User"));
-const [token, setToken] = useState(localStorage.getItem("TOKEN"));
-
-    useEffect(() => {
-        axios.get(
-            'https://gateway.scan-interfax.ru/api/v1/account/info',
-            {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                    'Content-Type': 'application/json',
-                    Accept: 'application/json',
-                }
-            }
-        ).then((response) => {
-            setInfo(response.data)
-        }).catch((error) => {
-        })
-    }, [token])
+const Info = (props) => {
 
     return info ? <div className={css.info}>
         <div className={css.bg}></div>
