@@ -5,26 +5,18 @@ import { connect } from "react-redux";
 import { getAuthUserData } from "../../store/auth-reducer";
 import {NavLink} from "react-router-dom";
 
-import { ImageLogo } from "@components/ImageLogo";
+import { Logo } from "@components/Logo";
 import logoImage from "@assets/images/Logo-image.svg";
 import { Menu } from "@components/Menu";
 
 
 const Header = (props) => {
-    // const isAuth = useSelector(selectIsAuth)
-    // const login = useSelector(selectCurrentUserLogin)
-
-    // const dispatch = useDispatch()
-
-    // const logoutCallback = () => {
-    //     dispatch(logout())
-    // }
 
     console.log(props.isAuth)
     return (
         <header className={styles.header}>
           <div className={styles.header_container}>
-            <ImageLogo src={logoImage} alt="logoImage"/>
+            <Logo src={logoImage} alt="logoImage"/>
             <Menu />
             {/* <Info /> */}
            {/*} <MobileMenu token={token} />

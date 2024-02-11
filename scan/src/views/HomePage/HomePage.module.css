@@ -1,4 +1,17 @@
-.homepage {
-  grid-area: homepage;
-  background-color: rebeccapurple;
+.home {
+  grid-area: main;
+  background-color: var(--main-bg-color);
+}
+
+.home_container {
+  display: grid;
+  justify-self: center; 
+  align-self: center;
+  grid-template-areas: 
+  "home"
+  "auth";
+
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
+
 }

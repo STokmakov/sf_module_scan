@@ -6,7 +6,7 @@ const Section1 = ({token}) => {
     const navigate = useNavigate()
 
     const click = () => {
-        navigate('/request')
+        navigate('/search')
     }
 
     return (
@@ -17,7 +17,8 @@ const Section1 = ({token}) => {
             <p className={css.text2}>
                 Комплексный анализ публикаций, получение данных в формате PDF на электронную почту.
             </p>
-            {token ? <button onClick={click} className={css.button}>Запросить данные</button> : ""}
+            <button onClick={click} className={css.button}>Запросить данные</button>
+            {/* {token ? <button onClick={click} className={css.button}>Запросить данные</button> : ""} */}
             <img className={css.image} src="@assets/images/main-image.jpg" alt="" />
             <div className={css.patch}></div>
         </section>

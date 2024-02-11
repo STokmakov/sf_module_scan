@@ -1,7 +1,6 @@
 
-import styles from "./Main.module.css"
+import styles from "./HomePage.module.css"
 import React from "react";
-
 
 import { Section1 } from "@components/ContainerMain/Section1";
 import { Section2 } from "@components/ContainerMain/Section2";

@@ -1,24 +1,23 @@
-import React, { Component, useState } from "react";
 import "@styles/App.css";
 
-import  HeaderContainer   from "@components/ContainerHeader/index";
-// import { MainContainer }  from "@components/ContainerMain";
-import { Footer }  from "@components/ContainerFooter";
-import  MainContainer   from "@components/ContainerMain";
-import './styles/App.css';
+import React, { Component, useState } from "react";
+import { Routes, Route } from 'react-router-dom';
 import { useNavigate } from 'react-router';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import  Login  from "./views/AuthPage";
 import {connect, Provider} from "react-redux";
 import {compose} from "redux";
-import {initializeApp} from "./store/app-reducer";
-// import Preloader from "./components/common/Preloader/Preloader";
-import { store } from "./store/store";
-// import {withSuspense} from "./hoc/withSuspense";
 
-// const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
-// const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'));
+import { store } from "./store/store";
+import {initializeApp} from "./store/app-reducer";
+
+import  HeaderContainer   from "@components/ContainerHeader/index";
+import { FooterContainer }  from "@components/ContainerFooter";
+
+import  HomeContainer   from "@views/HomePage";
+import  { SearchContainer }  from "@views/SearchPage";
+import  { ResultContainer }  from "@views/ResultPage";
+import  LoginContainer  from "./views/AuthPage";
+
 
 export const withRouter = (Component) =>{
   const Wrapper = (props) =>{
@@ -41,18 +40,17 @@ class App extends Component {
                         <div className='app-wrapper-content'>
                         {this.props.isAuth}
                         <Routes> 
-                              <Route path="/" element={<MainContainer />} /> 
+                              <Route path="/" element={<HomeContainer />} /> 
                               <Route path="/login" element={<LoginContainer />} />   
-                              <Route path="/search" element={<SearchContainer />} />   
-                              <Route path="/result" element={<ResultContainer />} />              
+                              <Route path="/result" element={<SearchContainer />} />   
+                              <Route path="/search" element={<ResultContainer />} />              
                         </Routes>
                       
                         </div>
-                        <Footer /> 
+                        <FooterContainer />  
                     </div>
         )
     }}
-
 
 const mapStateToProps = (state) => ({
     initialized: state.app.initialized,

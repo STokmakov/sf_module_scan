@@ -1,22 +1,20 @@
-import React from "react";
+import React from 'react';
+import { Footer } from "./Footer";
+import {connect} from "react-redux";
 
-import styles from "./Footer.module.css";
 
-import { ImageLogo } from "@components/ImageLogo";
-import { Address } from "@components/Address";
-import logoScan from "@assets/images/logo-scan.svg";
+class FooterContainer extends React.Component {
 
-function Footer() {
-  return (
-
-    <footer className={styles.footer}>
-      <div className={styles.footer_container}>
-      <ImageLogo src={logoScan} alt="logoScan" />
-      <Address />
-      </div>
-    </footer>
-
-  );
+    render() {
+        return  <Footer {...this.props} />    
+  
+    }
 }
 
-export { Footer };
+const mapStateToProps = (state) => ({
+    isAuth: state.token.isAuth,
+    login: state.token.login
+});
+
+connect(mapStateToProps)(FooterContainer)
+export {FooterContainer}

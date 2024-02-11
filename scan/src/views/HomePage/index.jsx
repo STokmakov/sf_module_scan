@@ -1,12 +1,19 @@
-import styles from "./HomePage.module.css";
-import React from "react";
-// import imgHome from "@assets/images/Main-image.svg";
+import React from 'react';
+import Home from "./HomePage";
+import {connect} from "react-redux";
 
 
-function HomePage() {
-  return (
-      <div>sdf</div>
-  );
+class HomeContainer extends React.Component {
+
+    render() {
+        return <Home {...this.props} />
+        
+    }
 }
 
-export { HomePage };
+const mapStateToProps = (state) => ({
+    isAuth: state.token.isAuth,
+    login: state.token.login,
+});
+
+export default connect(mapStateToProps)(HomeContainer) 
