@@ -31,7 +31,7 @@ export const setAuthUserLogin =
 export const getAuthUserLogin = (login, token, expire) => async (dispatch) => {
 
     dispatch(setAuthUserLogin(login, token, expire, true));
-    let response = await authAPI.me(token)
+    let response = await authAPI.info(token)
     console.log(response)
     dispatch(setAuthUserData(response.companyLimit, response.usedCompanyCount));
       }   

@@ -4,7 +4,8 @@ import axios from "axios";
 
 const Info = (props) => {
 
-    return info ? <div className={css.info}>
+    return (
+        <div className={css.info}>
         <div className={css.bg}></div>
         <table className={css.desktop}>
             <tbody>
@@ -13,7 +14,7 @@ const Info = (props) => {
                     Использовано компаний
                 </td>
                 <td className={css.usedCount}>
-                    {info.eventFiltersInfo.usedCompanyCount}
+                    {/* {info.eventFiltersInfo.usedCompanyCount} */}
                 </td>
             </tr>
             <tr>
@@ -21,7 +22,7 @@ const Info = (props) => {
                     Лимит по компаниям
                 </td>
                 <td className={css.limitCount}>
-                    {info.eventFiltersInfo.companyLimit}
+                    {/* {info.eventFiltersInfo.companyLimit} */}
                 </td>
 
             </tr>
@@ -32,19 +33,20 @@ const Info = (props) => {
                 Использовано компаний
             </div>
             <div className={css.usedCount}>
-                {info.eventFiltersInfo.usedCompanyCount}
+                {/* {info.eventFiltersInfo.usedCompanyCount} */}
             </div>
             <div className={css.limit}>
                 Лимит по компаниям
             </div>
             <div className={css.limitCount}>
-                {info.eventFiltersInfo.companyLimit}
+                {/* {info.eventFiltersInfo.companyLimit} */}
             </div>
         </div>
-    </div> : <div className={css.info}>
-        <div className={css.wait}></div>
-    </div>
-
-}
+    </div>  
+    // <div className={css.info}>
+    //     <div className={css.wait}></div>
+    // </div>
+    )
+    }
 
 export { Info }

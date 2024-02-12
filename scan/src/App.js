@@ -42,8 +42,8 @@ class App extends Component {
                         <Routes> 
                               <Route path="/" element={<HomeContainer />} /> 
                               <Route path="/login" element={<LoginContainer />} />   
-                              <Route path="/result" element={<SearchContainer />} />   
-                              <Route path="/search" element={<ResultContainer />} />              
+                              <Route path="/search" element={<SearchContainer />} />   
+                              <Route path="/result" element={<ResultContainer />} />              
                         </Routes>
                       
                         </div>

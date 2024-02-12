@@ -2,8 +2,9 @@ import css from './Section1.module.css'
 import React from 'react';
 import {useNavigate} from "react-router-dom";
 
-const Section1 = ({token}) => {
+const Section1 = (props) => {
     const navigate = useNavigate()
+   
 
     const click = () => {
         navigate('/search')
@@ -17,8 +18,7 @@ const Section1 = ({token}) => {
             <p className={css.text2}>
                 Комплексный анализ публикаций, получение данных в формате PDF на электронную почту.
             </p>
-            <button onClick={click} className={css.button}>Запросить данные</button>
-            {/* {token ? <button onClick={click} className={css.button}>Запросить данные</button> : ""} */}
+            {props.isAuth ? <button onClick={click} className={css.button}>Запросить данные</button> : ""}
             <img className={css.image} src="@assets/images/main-image.jpg" alt="" />
             <div className={css.patch}></div>
         </section>
