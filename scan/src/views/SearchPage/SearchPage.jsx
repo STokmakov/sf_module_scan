@@ -69,6 +69,20 @@ const SearchPage = (props) => {
           НАЙДИТЕ НЕОБХОДИМЫЕ
           <p>ДАННЫЕ В ПАРУ КЛИКОВ.</p>
         </h1>
+        <div>
+                <Field 
+                 name={"newsDigests"}
+                 id="employed" 
+                 component={Input} 
+                 type="checkbox"
+                 />
+                  
+
+                  <label htmlFor="newsDigests" className={styles.label}>
+                    Включать сводки новостей
+                  </label>
+
+                </div>
         <p className={styles.text}>
           Задайте параметры поиска. Чем больше заполните, тем точнее поиск
         </p>
@@ -85,200 +99,166 @@ const SearchPage = (props) => {
                  component={Input}/>
          
         </div>
-       
-        
         </div>
-        <button className={styles.submitButton}>Поиск</button>
-      </form>
-
-        
        
         
-            
-              
-            
+      
+                <label htmlFor="tonality" className={styles.label}>
+                  Тональность
+                </label>
+
+                <Field name="tonality" component="select" className={styles.select}>
+      <option></option>
+      <option value="any">Любая</option>
+      <option value="positive">Позитивная</option>
+      <option value="negative">Негативная</option>
+    </Field>
+
+                
+                <label htmlFor="documentCount" className={styles.left_label}>
+                  Количество документов в выдаче <span className={styles.star}>*</span>
+                </label>
+
+                <Field placeholder={"1 до 1000"} name={"documentCount"}
+                 validate={[required]}
+                 component={Input}/>
+
                
+                <h1>Диапозон поиска <span className={styles.star}>*</span></h1>
 
+                <div className={styles.data}>
+                  <label
+                    className={styles.left_label}>
 
-                {/* <select */}
-                  {/* id="tonality" */}
-                  {/* name="tonality" */}
-                {/* //   value={searchData.tonality} */}
-                {/* //   onChange={handleInputChange} */}
-                  {/* required */}
-                  {/* className={styles.select} */}
-                {/* > */}
-                  {/* <option value="any">Любая</option> */}
-                  {/* <option value="positive">Позитивная</option> */}
-                  {/* <option value="negative">Негативная</option> */}
-                {/* </select> */}
-                {/* <label htmlFor="documentCount" className={styles.left_label}> */}
-                  {/* Количество документов в выдаче <span className={styles.star}>*</span> */}
-                {/* </label> */}
-                {/* <input */}
-                  {/* type="number" */}
-                  {/* id="documentCount" */}
-                  {/* name="documentCount" */}
-                {/* //   value={searchData.documentCount < 0 ? 0 : searchData.documentCount} */}
-                {/* //   onChange={handleInputChange} */}
-                  {/* required */}
-                {/* //   className={(searchData.documentCount > 1000) ? */}
-                {/* //     styles.errorInput : */}
-                {/* //     styles.left_input} */}
-                  {/* placeholder="1 до 1000" */}
-                {/* /> */}
-                {/* <h1>Диапозон поиска <span className={styles.star}>*</span></h1> */}
-                {/* <div className={styles.data}> */}
-                  {/* <label */}
-                    {/* className={styles.left_label} */}
-                  {/* ></label> */}
-                  {/* <input */}
-                    {/* placeholder="Дата начала" */}
-                    {/* type="date" */}
-                    {/* id="startDate" */}
-                    {/* name="startDate" */}
-                    {/* // value={searchData.startDate} */}
-                    {/* // onChange={handleInputChange} */}
-                    {/* required */}
-                    {/* className={styles.left_input} */}
-                  {/* /> */}
-                  {/* <div className={styles.date_separator}></div> */}
-                  {/* <label className={styles.left_label}></label> */}
-                  {/* <input */}
-                    {/* placeholder="Дата конца" */}
-                    {/* type="date" */}
-                    {/* id="endDate" */}
-                    {/* name="endDate" */}
-                    {/* // value={searchData.endDate} */}
-                    {/* // onChange={handleInputChange} */}
-                    {/* required */}
-                    {/* className={styles.left_input} */}
-                  {/* /> */}
-                {/* </div> */}
-              {/* </div> */}
-            {/* </div> */}
-            {/* <div className={styles.column}> */}
-              {/* <div className={styles.right}> */}
-                {/* <div className={styles.checkbox}> */}
-                  {/* <input */}
-                    {/* type="checkbox" */}
-                    {/* id="completeness" */}
-                    {/* name="completeness" */}
-                    {/* // checked={searchData.completeness} */}
-                    {/* // onChange={handleInputChange} */}
-                    {/* className={styles.checkbox} */}
-                  {/* /> */}
-                  {/* <label htmlFor="completeness" className={styles.label}> */}
-                    {/* Признак максимальной полноты */}
-                  {/* </label> */}
-                {/* </div> */}
-                {/* <div className={styles.checkbox}> */}
-                  {/* <input */}
-                    {/* type="checkbox" */}
-                    {/* id="businessContext" */}
-                    {/* name="businessContext" */}
-                    {/* // checked={searchData.businessContext} */}
-                    {/* // onChange={handleInputChange} */}
-                    {/* className={styles.checkbox} */}
-                  {/* /> */}
-                  {/* <label htmlFor="businessContext" className={styles.label}> */}
-                    {/* Упоминания в бизнес-контексте */}
-                  {/* </label> */}
-                {/* </div> */}
-                {/* <div className={styles.checkbox}> */}
-                  {/* <input */}
-                    {/* type="checkbox" */}
-                    {/* id="mainRole" */}
-                    {/* name="mainRole" */}
-                    {/* // checked={searchData.mainRole} */}
-                    {/* // onChange={handleInputChange} */}
-                    {/* className={styles.checkbox} */}
-                  {/* /> */}
-                  {/* <label htmlFor="mainRole" className={styles.label}> */}
-                    {/* Главная роль в публикации */}
-                  {/* </label> */}
-                {/* </div> */}
-                {/* <div className={styles.checkbox}> */}
-                  {/* <input */}
-                    {/* type="checkbox" */}
-                    {/* id="riskFactors" */}
-                    {/* name="riskFactors" */}
-                    {/* // checked={searchData.riskFactors} */}
-                    {/* // onChange={handleInputChange} */}
-                    {/* className={styles.checkbox} */}
-                  {/* /> */}
-                  {/* <label htmlFor="riskFactors" className={styles.label}> */}
-                    {/* В Публикации только c риск-факторами */}
-                  {/* </label> */}
-                {/* </div> */}
-                {/* <div className={styles.checkbox}> */}
-                  {/* <input */}
-                    {/* type="checkbox" */}
-                    {/* id="technicalNews" */}
-                    {/* name="technicalNews" */}
-                    {/* // checked={searchData.technicalNews} */}
-                    {/* // onChange={handleInputChange} */}
-                    {/* className={styles.checkbox} */}
-                  {/* /> */}
-                  {/* <label htmlFor="technicalNews" className={styles.label}> */}
-                    {/* Включать технические новости рынков */}
-                  {/* </label> */}
-                {/* </div> */}
-                {/* <div className={styles.checkbox}> */}
-                  {/* <input */}
-                    {/* type="checkbox" */}
-                    {/* id="announcements" */}
-                    {/* name="announcements" */}
-                    {/* // checked={searchData.announcements} */}
-                    {/* // onChange={handleInputChange} */}
-                    {/* className={styles.checkbox} */}
-                  {/* /> */}
-                  {/* <label htmlFor="announcements" className={styles.label}> */}
-                    {/* Включать анонсы и календари */}
-                  {/* </label> */}
-                {/* </div> */}
-                {/* <div className={styles.checkbox}> */}
-                  {/* <input */}
-                    {/* type="checkbox" */}
-                    {/* id="newsDigests" */}
-                    {/* name="newsDigests" */}
-                    {/* // checked={searchData.newsDigests} */}
-                    {/* // onChange={handleInputChange} */}
-                    {/* className={styles.checkbox} */}
-                  {/* /> */}
-                  {/* <label htmlFor="newsDigests" className={styles.label}> */}
-                    {/* Включать сводки новостей */}
-                  {/* </label> */}
-                {/* </div> */}
-                {/* <button */}
-                  {/* type="button" */}
-                {/* //   onClick={handleSearch} */}
-                {/* //   disabled={!isFormValid()} */}
-                  {/* className={styles.submitButton} */}
-                {/* > */}
-                  {/* Поиск */}
-                {/* </button> */}
-                {/* <p className={styles.text2}>* Обязательные к заполнению поля</p> */}
-              {/* </div> */}
-            {/* </div> */}
-          {/* </form> */}
-          {/* <div className={styles.imageContainer}> */}
-            {/* <img */}
-              {/* src={DocumentImage} */}
-              {/* alt="Search Page" */}
-              {/* className={styles.imageDoc} */}
-            {/* /> */}
-            {/* <img src={FolderImage} alt="Search Page" className={styles.imageFol} /> */}
-            {/* <img src={GroupImage} alt="Search Page" className={styles.imageGro} /> */}
-          {/* </div> */}
-        </div>
-      </div>
-{/*  */}
-    </main>
-  );
-};
+                  </label>
+                  <Field placeholder={"Дата начала"} name={"startDate"}
+                 validate={[required]}
+                 component={Input} 
+                 className={styles.left_input}/>
 
-  {/* ); */}
-{/* }; */}
+                  
+                  <div className={styles.date_separator}></div>
+                  <label className={styles.left_label}></label>
+
+                  <Field placeholder={"Дата конца"} name={"endDate"}
+                 validate={[required]}
+                 component={Input} 
+                 className={styles.left_input}/>
+                  
+                 
+                </div>
+
+            <div className={styles.column}>
+              <div className={styles.right}>
+                <div className={styles.checkbox}>
+
+                <Field 
+                 name={"completeness"}
+                 id="employed" 
+                 component={Input} 
+                 type="checkbox"
+                 className={styles.checkbox}/>
+
+                  
+
+                  <label htmlFor="completeness" className={styles.label}>
+                    Признак максимальной полноты
+                  </label>
+
+                </div>
+                <div className={styles.checkbox}>
+                <Field 
+                 name={"businessContext"}
+                 id="employed" 
+                 component={Input} 
+                 type="checkbox"
+                 className={styles.checkbox}/>
+
+                
+                  
+                  <label htmlFor="businessContext" className={styles.label}>
+                    Упоминания в бизнес-контексте
+                  </label>
+                </div>
+
+                <div className={styles.checkbox}>
+                <Field 
+                 name={"mainRole"}
+                 id="employed" 
+                 component={Input} 
+                 type="checkbox"
+                 className={styles.checkbox}/>
+                  
+                  <label htmlFor="mainRole" className={styles.label}>
+                    Главная роль в публикации
+                  </label>
+                </div>
+
+                <div className={styles.checkbox}>
+                <Field 
+                 name={"riskFactors"}
+                 id="employed" 
+                 component={Input} 
+                 type="checkbox"
+                 className={styles.checkbox}/>
+                 
+                  <label htmlFor="riskFactors" className={styles.label}>
+                    В Публикации только c риск-факторами
+                  </label>
+                </div>
+
+                <div className={styles.checkbox}>
+                <Field 
+                 name={"technicalNews"}
+                 id="employed" 
+                 component={Input} 
+                 type="checkbox"
+                 className={styles.checkbox}/>
+                  
+                  <label htmlFor="technicalNews" className={styles.label}>
+                    Включать технические новости рынков
+                  </label>
+                </div>
+
+                <div className={styles.checkbox}>
+                <Field 
+                 name={"announcements"}
+                 id="employed" 
+                 component={Input} 
+                 type="checkbox" 
+                 className={styles.checkbox}/>
+                  
+                  <label htmlFor="announcements" className={styles.label}>
+                    Включать анонсы и календари
+                  </label>
+                </div>
+
+                <div className={styles.checkbox}>
+                <Field 
+                 name={"newsDigests"}
+                 id="employed" 
+                 component={Input} 
+                 type="checkbox"
+                 className={styles.checkbox}/>
+                  
+
+                  <label htmlFor="newsDigests" className={styles.label}>
+                    Включать сводки новостей
+                  </label>
+
+                </div>
+                 <button className={styles.submitButton}>Поиск</button>
+                <p className={styles.text2}>* Обязательные к заполнению поля</p>
+                </div>
+                </div>
+                </form>
+                
+                
+              </div>
+              </div>
+              </main>
+            
+            );
+          };        
 
 export default SearchPage;

@@ -10,47 +10,7 @@ import ResultContext from '../../context/createContext'
 // import { GeneralResultLoader } from '../../components/GeneralResultLoader'
 
 function ResultContainer() {
-//   const context = useContext(ResultContext)
-//   const [countDocs, setCountDocs] = useState(4)
 
-//   const resultGeneralData = context.generalData
-//   const resultData = context.data
-
-//   const detailsData = context.detailsData
-//   const setDetailsData = context.setDetailsData
-
-//   useEffect(() => {
-//     if (resultData && (+resultData.data.items.length) > 0) {
-//       const arrForRequest = []
-
-//       if ((+resultData.data.items.length) < countDocs) {
-//         for (let i = 0; i < (+resultData.data.items.length); i++) {
-//           arrForRequest.push(resultData.data.items[i].encodedId)
-//         }
-//       } else {
-//         for (let i = 0; i < countDocs; i++) {
-//           arrForRequest.push(resultData.data.items[i].encodedId)
-//         }
-//       }
-//       const req = async () => {
-//         setDetailsData(await getDetailData(arrForRequest))
-//       }
-//       req()
-//     }
-//   }, [resultData, countDocs])
-
-//   const moreBtnHandler = () => {
-//     const countDocsIterator = 4 // число на которое увеличивается количество записей
-//     if ((countDocs + countDocsIterator) < (+resultData.data.items.length)) {
-//       setCountDocs(countDocs + countDocsIterator)
-//     }
-
-//     const docsRest = (+resultData.data.items.length) - countDocs
-
-//     if (docsRest < countDocsIterator) {
-//       setCountDocs(countDocs + docsRest)
-//     }
-//   }
 
   return (
     <main className={styles.resultPage}>

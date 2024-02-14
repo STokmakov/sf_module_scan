@@ -6,33 +6,28 @@ export const dataAPI = {
     
     getGeneralData(token, inn, startDate, endDate, documentCount) {
         const config = {
-            headers: { Authorization: `Bearer ${token}` },
+            headers: { Authorization: `Bearer ${token}`},
         };
-        const  data = {
+        const bodyParameters = {
+            
                 "issueDateInterval": {
-                // "startDate": `${startDate}`,
-                "startDate": "2019-01-01T00:00:00+03:00",
-                // "endDate": `${endDate}`
-                "endDate": "2024-08-31T23:59:59+03:00"
+                  "startDate": "2019-01-01T00:00:00+03:00",
+                  "endDate": "2023-08-31T23:59:59+03:00"
                 },
                 "searchContext": {
-                "targetSearchEntitiesContext": {
+                  "targetSearchEntitiesContext": {
                     "targetSearchEntities": [
-                    {
+                      {
                         "type": "company",
                         "sparkId": null,
                         "entityId": null,
-                        // "inn": `${inn}`,
-                        "inn": "7710137066",
+                        "inn": 7710137066,
                         "maxFullness": true,
                         "inBusinessNews": null
-                    }
+                      }
                     ],
-                    // "onlyMainRole": `${mainRole}`,
                     "onlyMainRole": true,
-                    // "tonality": `${tonality}`,
                     "tonality": "any",
-                    // "onlyWithRiskFactors": `${riskFactors}`,
                     "onlyWithRiskFactors": false,
                     "riskFactors": {
                       "and": [],
@@ -44,116 +39,114 @@ export const dataAPI = {
                       "or": [],
                       "not": []
                     }
-                },
-                "themesFilter": {
+                  },
+                  "themesFilter": {
                     "and": [],
                     "or": [],
                     "not": []
-                }
+                  }
                 },
                 "searchArea": {
-                "includedSources": [],
-                "excludedSources": [],
-                "includedSourceGroups": [],
-                "excludedSourceGroups": []
+                  "includedSources": [],
+                  "excludedSources": [],
+                  "includedSourceGroups": [],
+                  "excludedSourceGroups": []
                 },
                 "attributeFilters": {
-                // "excludeTechNews": `${technicalNews}`,
-                "excludeTechNews": true,
-                // "excludeAnnouncements": `${announcements}`,
-                "excludeAnnouncements": true,
-                // "excludeDigests": `${newsDigests}`
-                "excludeDigests": true
+                  "excludeTechNews": true,
+                  "excludeAnnouncements": true,
+                  "excludeDigests": true
                 },
                 "similarMode": "duplicates",
-                // "limit": `${documentCount}`,
-                "limit": 10,
+                "limit": 5,
                 "sortType": "sourceInfluence",
                 "sortDirectionType": "desc",
                 "intervalType": "month",
                 "histogramTypes": [
-                "totalDocuments",
-                "riskFactors"
+                  "totalDocuments",
+                  "riskFactors"
                 ]
-            
-           
-        
-        };
+              
+            };
 
-        return instance.post(`objectsearch/histograms`,{data}, config).then((res) => {
-            console.log(config)
-            console.log(res);
+
+        return instance.post(`objectsearch/histograms`, 
+        bodyParameters,
+        config
+        ).then((res) => {
+            console.log(res.data);
             console.log("Account info is received successfully");
-            return res.data;
+            return res;
           })
           .catch((e) => console.log("Failed receiving data..."));
       },
 
 
-      getData(searchParametrs) {
+      getData(token, inn, startDate, endDate, limit) {
         const config = {
             headers: { Authorization: `Bearer ${token}` },
-            data: {
+        };
+        const bodyParameters = {
+            
                 "issueDateInterval": {
-                "startDate": `${searchParametrs.startDate}`,
-                "endDate": `${searchParametrs.endDate}`
+                  "startDate": "2019-01-01T00:00:00+03:00",
+                  "endDate": "2023-08-31T23:59:59+03:00"
                 },
                 "searchContext": {
-                "targetSearchEntitiesContext": {
+                  "targetSearchEntitiesContext": {
                     "targetSearchEntities": [
-                    {
+                      {
                         "type": "company",
                         "sparkId": null,
                         "entityId": null,
-                        "inn": `${searchParametrs.inn}`,
+                        "inn": 7710137066,
                         "maxFullness": true,
                         "inBusinessNews": null
-                    }
+                      }
                     ],
-                    "onlyMainRole": `${searchParametrs.mainRole}`,
-                    "tonality": `${searchParametrs.tonality}`,
-                    "onlyWithRiskFactors": `${searchParametrs.riskFactors}`,
+                    "onlyMainRole": true,
+                    "tonality": "any",
+                    "onlyWithRiskFactors": false,
                     "riskFactors": {
-                    "and": [],
-                    "or": [],
-                    "not": []
+                      "and": [],
+                      "or": [],
+                      "not": []
                     },
                     "themes": {
-                    "and": [],
-                    "or": [],
-                    "not": []
+                      "and": [],
+                      "or": [],
+                      "not": []
                     }
-                },
-                "themesFilter": {
+                  },
+                  "themesFilter": {
                     "and": [],
                     "or": [],
                     "not": []
-                }
+                  }
                 },
                 "searchArea": {
-                "includedSources": [],
-                "excludedSources": [],
-                "includedSourceGroups": [],
-                "excludedSourceGroups": []
+                  "includedSources": [],
+                  "excludedSources": [],
+                  "includedSourceGroups": [],
+                  "excludedSourceGroups": []
                 },
                 "attributeFilters": {
-                "excludeTechNews": `${searchParametrs.technicalNews}`,
-                "excludeAnnouncements": `${searchParametrs.announcements}`,
-                "excludeDigests": `${searchParametrs.newsDigests}`
+                  "excludeTechNews": true,
+                  "excludeAnnouncements": true,
+                  "excludeDigests": true
                 },
                 "similarMode": "duplicates",
-                "limit": `${searchParametrs.documentCount}`,
+                "limit": 5,
                 "sortType": "sourceInfluence",
                 "sortDirectionType": "desc",
                 "intervalType": "month",
                 "histogramTypes": [
-                "totalDocuments",
-                "riskFactors"
+                  "totalDocuments",
+                  "riskFactors"
                 ]
-            },
-        };
-
-        return instance.post(`objectsearch`, config).then((res) => {
+              
+            };
+        return instance.post(`objectsearch`, bodyParameters,  config).then((res) => {
             console.log(res);
             console.log("Account info is received successfully");
             return res;
@@ -161,15 +154,16 @@ export const dataAPI = {
           .catch((e) => console.log("Failed receiving data..."));
       },
 
-      getDetailData(searchParametrs) {
+      getDetailData(token, arrForRequest) {
         const config = {
             headers: { Authorization: `Bearer ${token}` },
-            data: {
+        };
+        const bodyParameters = { 
                 "ids": arrForRequest
-              },
+              
         };
 
-        return instance.post(`objectsearch`, config).then((res) => {
+        return instance.post(`objectsearch`, bodyParameters, config).then((res) => {
             console.log(res);
             console.log("Account info is received successfully");
             return res;

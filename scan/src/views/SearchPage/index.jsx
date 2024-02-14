@@ -5,6 +5,7 @@ import {reduxForm} from "redux-form";
 import {connect} from "react-redux";
 import { getData } from "../../store/data-reducer";
 
+
 import SearchPage  from "./SearchPage";
 
 const SearchReduxForm = reduxForm({form: 'search'})(SearchPage);
