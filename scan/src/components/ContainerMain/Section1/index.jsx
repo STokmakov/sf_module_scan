@@ -18,7 +18,7 @@ const Section1 = (props) => {
             <p className={css.text2}>
                 Комплексный анализ публикаций, получение данных в формате PDF на электронную почту.
             </p>
-            {props.isAuth ? <button onClick={click} className={css.button}>Запросить данные</button> : ""}
+            {props.isAuth ? <button onClick={click} className={css.button}>Запросить данные!!!</button> : ""}
             <img className={css.image} src="@assets/images/main-image.jpg" alt="" />
             <div className={css.patch}></div>
         </section>

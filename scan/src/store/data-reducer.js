@@ -34,10 +34,19 @@ export const setData =
         type: SET_DATA, payload: {completeness}
     })
   
-export const getData = (token) => async (dispatch) => {
+export const getData = (token, inn, startDate, endDate, limit) => async (dispatch) => {
+    console.log(token, inn, startDate, endDate, limit)
    
-    let response = await dataAPI.info(token)
-    console.log(response)
+    let response = await dataAPI.getGeneralData(token, inn, startDate, endDate, limit);
+        console.log(response)
+        if (response.status === 200) {
+            // success, get auth data
+            console.log('yes')
+        }
+        else {
+            console.log('No')
+            // {_error: message}));
+        }
       }
 
 
