@@ -12,12 +12,13 @@ const SearchReduxForm = reduxForm({form: 'search'})(SearchPage);
 
 const SearchContainer = (props) => {
   const onSubmit = (formData) => {
-      props.getData(props.token, formData.inn, props.startDate, props.endDate, props.limit);
+      props.getData(props.token, formData.inn, formData.tonality, formData.documentCount, formData.startDate, formData.endDate, formData.completeness,
+        formData.businessContext, formData.mainRole, formData.riskFactors, formData.technicalNews, formData.announcements, formData.newsDigests);
   }
 
-  if (!props.isAuth) {
-    return <Navigate to={"/login"} />
-  }
+  // if (!props.isAuth) {
+  //   return <Navigate to={"/login"} />
+  // }
 
   return (
     <div>

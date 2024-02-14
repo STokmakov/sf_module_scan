@@ -9,9 +9,10 @@
   align-self: center;
   grid-template-areas: 
   "home"
+  "search"
   "auth";
 
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr;
   grid-template-columns: 1fr;
 
 }

@@ -31,7 +31,7 @@
     margin-top: 70px;
     padding: 16px 65px;
     border-radius: 5px;
-    border: 0;
+    border: 5;
     background-color: var(--add-blue);
 }
 

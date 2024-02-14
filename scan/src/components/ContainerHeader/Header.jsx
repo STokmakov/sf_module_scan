@@ -9,6 +9,7 @@ import { Logo } from "@components/Logo";
 import { Info } from "@components/Info";
 import logoImage from "@assets/images/Logo-image.svg";
 import { Menu } from "@components/Menu";
+import { Loader } from "@components/Loader";
 import { Login } from "@components/Login";
 import Account from "../Account/Account";
 import { MobileMenu } from "@components/MobileMenu";
@@ -21,7 +22,7 @@ const Header = (props) => {
           <div className={styles.header_container}>
             <Logo src={logoImage} alt="logoImage"/>
             <Menu />
-            {props.isAuth ? <Info /> : <Menu />}
+            {props.isAuth ? <Info /> : <Loader />}
             <MobileMenu /> 
             {props.isAuth ? <Account logout={props.logout}/> : <Login />}
 

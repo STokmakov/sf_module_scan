@@ -4,7 +4,7 @@ import {instance} from "./api";
 
 export const dataAPI = {
     
-    getGeneralData(token, inn, startDate, endDate, documentCount) {
+    getGeneralData(token, inn, tonality, documentCount, startDate, endDate, completeness, businessContext, mainRole, riskFactors, technicalNews, announcements, newsDigests) {
         const config = {
             headers: { Authorization: `Bearer ${token}`},
         };
@@ -82,7 +82,7 @@ export const dataAPI = {
       },
 
 
-      getData(token, inn, startDate, endDate, limit) {
+      getData(token, inn, tonality, documentCount, startDate, endDate, completeness, businessContext, mainRole, riskFactors, technicalNews, announcements, newsDigests) {
         const config = {
             headers: { Authorization: `Bearer ${token}` },
         };

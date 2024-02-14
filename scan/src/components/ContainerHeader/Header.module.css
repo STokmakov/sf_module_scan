@@ -7,7 +7,7 @@
     display: grid;
     align-self: center;
     grid-template-areas: 
-    "imglogo . menu menu . .";
+    "imglogo . . menu loader .";
   
   
     grid-template-rows: 1fr;
@@ -15,6 +15,6 @@
   
 }
 
-.styles.header_container_login {
+/* .styles.header_container_login {
   grid-area: login;
-}
+} */

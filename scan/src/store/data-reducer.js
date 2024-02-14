@@ -40,10 +40,13 @@ export const setData2 =
          type: SET_DATA, payload: {data2}
      })
   
-export const getData = (token, inn, startDate, endDate, limit) => async (dispatch) => {
-    console.log(token, inn, startDate, endDate, limit)
+export const getData = (token, inn, tonality, documentCount, startDate, endDate, completeness="false", businessContext="false", mainRole="false",
+     riskFactors="false", technicalNews="false", announcements="false", newsDigests="false") => async (dispatch) => {
+
+    console.log(token, inn, tonality, documentCount, startDate, endDate, completeness, businessContext, mainRole, riskFactors, technicalNews, announcements, newsDigests)
    
-    let response = await dataAPI.getGeneralData(token, inn, startDate, endDate, limit);
+    let response = await dataAPI.getGeneralData(token, inn, tonality, documentCount, startDate, endDate, completeness,
+        businessContext, mainRole, riskFactors, technicalNews, announcements, newsDigests);
         console.log(response.status)
         if (response.status === 200) {
             // success, get auth data
@@ -55,7 +58,8 @@ export const getData = (token, inn, startDate, endDate, limit) => async (dispatc
             // {_error: message}));
         };
     
-    let response2 = await dataAPI.getData(token, inn, startDate, endDate, limit);
+    let response2 = await dataAPI.getData(token, inn, tonality, documentCount, startDate, endDate, completeness, 
+        businessContext, mainRole, riskFactors, technicalNews, announcements, newsDigests);
       console.log(response2.status)
       if (response2.status === 200) {
           // success, get auth data

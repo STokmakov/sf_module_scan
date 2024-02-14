@@ -4,6 +4,7 @@
   width: 1200px;
   grid-template-areas: 
   "header" 
+  "search"
   "main"
   "footer";
 

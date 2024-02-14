@@ -1,34 +1,21 @@
 .menu {
     grid-area: menu;
-    position: absolute;
-    top: 36px;
-    left: 602px;
+}
+    
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 236px;
 }
 
-.menuList {
-    list-style: none;
-}
-
-.menuItem + .menuItem {
-    padding-left: 50px;
-}
-
-.menuActive {
-    font-size: 14px;
-    letter-spacing: 0.14px;
-    text-decoration: none;
-    color: var(--base-black);
-}
-
-.menuNormal {
-    font-size: 14px;
-    letter-spacing: 0.14px;
-    text-decoration: none;
-    color: var(--base-black);
+.nav button {
+    color: var(--main-color-2);
 }
 
 @media screen and (max-width: 1439px) {
-    .menu {
+    .nav {
         display: none;
     }
 }

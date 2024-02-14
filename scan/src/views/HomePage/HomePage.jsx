@@ -10,8 +10,6 @@ import { Section4 } from "@components/ContainerMain/Section4";
 
 const Main = (props) => {
     
-    console.log(props)
-
     return (
         <main className={styles.main}>
           <div className={styles.main_container}>

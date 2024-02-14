@@ -1,3 +1,6 @@
+.serch {
+  grid-area: search;
+}
 .searchPage {
     box-sizing: border-box;
     max-width: 1360px;
