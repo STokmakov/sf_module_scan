@@ -1,4 +1,5 @@
 import styles from './ResultSlider.module.css'
+import React from 'react'
 import chevron from '../../assets/images/chevron.png'
 import { useRef } from 'react'
 import { mapArrFunc } from '../../utils/mapArrFunc'

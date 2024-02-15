@@ -3,6 +3,7 @@ import { Navigate } from "react-router-dom";
 
 import {reduxForm} from "redux-form";
 import {connect} from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { getData } from "../../store/data-reducer";
 
 
@@ -10,11 +11,14 @@ import SearchPage  from "./SearchPage";
 
 const SearchReduxForm = reduxForm({form: 'search'})(SearchPage);
 
-const SearchContainer = (props) => {
+const SearchContainer = (props) => { 
+  const navigate = useNavigate();
   const onSubmit = (formData) => {
       props.getData(props.token, formData.inn, formData.tonality, formData.documentCount, formData.startDate, formData.endDate, formData.completeness,
         formData.businessContext, formData.mainRole, formData.riskFactors, formData.technicalNews, formData.announcements, formData.newsDigests);
-  }
+      navigate('/result')
+        }
+  
 
   // if (!props.isAuth) {
   //   return <Navigate to={"/login"} />

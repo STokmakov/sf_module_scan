@@ -1,20 +1,17 @@
 import React, { useContext, useEffect, useState } from "react";
 import styles from "./SearchPage.module.css";
-import DocumentImage from "../../assets/images/SearchPageImg3.svg";
-import FolderImage from "../../assets/images/SearchPageImg2.svg";
-import GroupImage from "../../assets/images/SearchPageImg1.svg";
+import DocumentImage from "@assets/images/SearchPageImg3.svg";
+import FolderImage from "@assets/images/SearchPageImg2.svg";
+import GroupImage from "@assets/images/SearchPageImg1.svg";
 import { useNavigate } from "react-router-dom";
 import {Field} from "redux-form";
 import { Input } from "../../common/FormsControls/FormsControls";
 import {required} from "../../utils/validators/validators";
-import { Container } from "react-bootstrap";
+// import { Container } from "react-bootstrap";
 
 
 const SearchPage = (props) => {
-  const navigate = useNavigate();
-  const handleSearch = async () => {
-    navigate('/result')
-  }
+ 
   return (
     
     <main className={styles.search}>
@@ -72,6 +69,7 @@ const SearchPage = (props) => {
                  <Field placeholder={"Дата начала"} name={"startDate"}
                  validate={[required]}
                  component={Input} 
+                 type="date"
                  className={styles.left_input}/>
 
                   
@@ -81,6 +79,7 @@ const SearchPage = (props) => {
                  <Field placeholder={"Дата конца"} name={"endDate"}
                  validate={[required]}
                  component={Input} 
+                 type="date"
                  className={styles.left_input}/>
                   
                   </div>
@@ -185,7 +184,12 @@ const SearchPage = (props) => {
                   </label>
 
                 </div>
-                 <button className={styles.submitButton}>Поиск</button>
+
+                <button
+                 className={styles.submitButton}>
+                 Поиск
+                </button>
+
                 <p className={styles.text2}>* Обязательные к заполнению поля</p>
                 </div>
                 </div>

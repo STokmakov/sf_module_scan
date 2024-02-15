@@ -6,12 +6,12 @@ import { getAuthUserData } from "../../store/auth-reducer";
 import {NavLink} from "react-router-dom";
 
 import { Logo } from "@components/Logo";
-import { Info } from "@components/Info";
+import InfoContainer  from "@components/Info";
 import logoImage from "@assets/images/Logo-image.svg";
 import { Menu } from "@components/Menu";
 import { Loader } from "@components/Loader";
 import { Login } from "@components/Login";
-import Account from "../Account/Account";
+import AccountContainer from "@components/Account";
 import { MobileMenu } from "@components/MobileMenu";
 
 const Header = (props) => {
@@ -22,9 +22,9 @@ const Header = (props) => {
           <div className={styles.header_container}>
             <Logo src={logoImage} alt="logoImage"/>
             <Menu />
-            {props.isAuth ? <Info /> : <Loader />}
+            {props.isAuth ? <InfoContainer /> : <Loader />}
             <MobileMenu /> 
-            {props.isAuth ? <Account logout={props.logout}/> : <Login />}
+            {props.isAuth ? <AccountContainer /> : <Login />}
 
   
             </div>

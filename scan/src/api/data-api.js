@@ -10,64 +10,64 @@ export const dataAPI = {
         };
         const bodyParameters = {
             
-                "issueDateInterval": {
-                  "startDate": "2019-01-01T00:00:00+03:00",
-                  "endDate": "2023-08-31T23:59:59+03:00"
-                },
-                "searchContext": {
-                  "targetSearchEntitiesContext": {
-                    "targetSearchEntities": [
-                      {
-                        "type": "company",
-                        "sparkId": null,
-                        "entityId": null,
-                        "inn": 7710137066,
-                        "maxFullness": true,
-                        "inBusinessNews": null
-                      }
-                    ],
-                    "onlyMainRole": true,
-                    "tonality": "any",
-                    "onlyWithRiskFactors": false,
-                    "riskFactors": {
-                      "and": [],
-                      "or": [],
-                      "not": []
-                    },
-                    "themes": {
-                      "and": [],
-                      "or": [],
-                      "not": []
-                    }
-                  },
-                  "themesFilter": {
-                    "and": [],
-                    "or": [],
-                    "not": []
+            "issueDateInterval": {
+              "startDate": `${startDate}`,
+              "endDate": `${endDate}`
+            },
+            "searchContext": {
+              "targetSearchEntitiesContext": {
+                "targetSearchEntities": [
+                  {
+                    "type": "company",
+                    "sparkId": null,
+                    "entityId": null,
+                    "inn": `${inn}`,
+                    "maxFullness": true,
+                    "inBusinessNews": null
                   }
+                ],
+                "onlyMainRole": `${mainRole}`,
+                "tonality": `${tonality}`,
+                "onlyWithRiskFactors": `${riskFactors}`,
+                "riskFactors": {
+                  "and": [],
+                  "or": [],
+                  "not": []
                 },
-                "searchArea": {
-                  "includedSources": [],
-                  "excludedSources": [],
-                  "includedSourceGroups": [],
-                  "excludedSourceGroups": []
-                },
-                "attributeFilters": {
-                  "excludeTechNews": true,
-                  "excludeAnnouncements": true,
-                  "excludeDigests": true
-                },
-                "similarMode": "duplicates",
-                "limit": 5,
-                "sortType": "sourceInfluence",
-                "sortDirectionType": "desc",
-                "intervalType": "month",
-                "histogramTypes": [
-                  "totalDocuments",
-                  "riskFactors"
-                ]
-              
-            };
+                "themes": {
+                  "and": [],
+                  "or": [],
+                  "not": []
+                }
+              },
+              "themesFilter": {
+                "and": [],
+                "or": [],
+                "not": []
+              }
+            },
+            "searchArea": {
+              "includedSources": [],
+              "excludedSources": [],
+              "includedSourceGroups": [],
+              "excludedSourceGroups": []
+            },
+            "attributeFilters": {
+              "excludeTechNews": `${technicalNews}`,
+              "excludeAnnouncements": `${announcements}`,
+              "excludeDigests": `${newsDigests}`
+            },
+            "similarMode": "duplicates",
+            "limit": `${documentCount}`,
+            "sortType": "sourceInfluence",
+            "sortDirectionType": "desc",
+            "intervalType": "month",
+            "histogramTypes": [
+              "totalDocuments",
+              "riskFactors"
+            ]
+          
+        };
 
 
         return instance.post(`objectsearch/histograms`, 
@@ -89,8 +89,8 @@ export const dataAPI = {
         const bodyParameters = {
             
                 "issueDateInterval": {
-                  "startDate": "2019-01-01T00:00:00+03:00",
-                  "endDate": "2023-08-31T23:59:59+03:00"
+                  "startDate": `${startDate}`,
+                  "endDate": `${endDate}`
                 },
                 "searchContext": {
                   "targetSearchEntitiesContext": {
@@ -99,14 +99,14 @@ export const dataAPI = {
                         "type": "company",
                         "sparkId": null,
                         "entityId": null,
-                        "inn": 7710137066,
+                        "inn": `${inn}`,
                         "maxFullness": true,
                         "inBusinessNews": null
                       }
                     ],
-                    "onlyMainRole": true,
-                    "tonality": "any",
-                    "onlyWithRiskFactors": false,
+                    "onlyMainRole": `${mainRole}`,
+                    "tonality": `${tonality}`,
+                    "onlyWithRiskFactors": `${riskFactors}`,
                     "riskFactors": {
                       "and": [],
                       "or": [],
@@ -131,12 +131,12 @@ export const dataAPI = {
                   "excludedSourceGroups": []
                 },
                 "attributeFilters": {
-                  "excludeTechNews": true,
-                  "excludeAnnouncements": true,
-                  "excludeDigests": true
+                  "excludeTechNews": `${technicalNews}`,
+                  "excludeAnnouncements": `${announcements}`,
+                  "excludeDigests": `${newsDigests}`
                 },
                 "similarMode": "duplicates",
-                "limit": 5,
+                "limit": `${documentCount}`,
                 "sortType": "sourceInfluence",
                 "sortDirectionType": "desc",
                 "intervalType": "month",
@@ -163,8 +163,8 @@ export const dataAPI = {
               
         };
 
-        return instance.post(`objectsearch`, bodyParameters, config).then((res) => {
-            console.log(res);
+        return instance.post(`documents`, bodyParameters, config).then((res) => {
+            console.log("Otvet"+res);
             console.log("Account info is received successfully");
             return res;
           })

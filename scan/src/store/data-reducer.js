@@ -3,20 +3,9 @@ import { dataAPI } from "../api/data-api";
 const SET_DATA = 'SET_DATA'
 
 let initialState = {
-    inn: null,
-    completeness: false,
-    businessContext: false,
-    mainRole: false,
-    tonality: "any",
-    riskFactors: false,
-    technicalNews: false,
-    announcements: false,
-    newsDigests: false,
-    documentCount: null,
-    startDate: null,
-    endDate: null,
     data: null,
     data2: null,
+    detaildata: null
 };
 
 const dataReducer = (state = initialState, action) => {
@@ -39,6 +28,11 @@ export const setData2 =
     (data2) => ({
          type: SET_DATA, payload: {data2}
      })
+
+export const setDetaildata =
+     (detaildata) => ({
+          type: SET_DATA, payload: {detaildata}
+      })
   
 export const getData = (token, inn, tonality, documentCount, startDate, endDate, completeness="false", businessContext="false", mainRole="false",
      riskFactors="false", technicalNews="false", announcements="false", newsDigests="false") => async (dispatch) => {
@@ -70,7 +64,22 @@ export const getData = (token, inn, tonality, documentCount, startDate, endDate,
           console.log('No2')
           // {_error: message}));
       }
-    
+
+    }
+
+export const getDetail = (token, arrForRequest) => async (dispatch) => {
+    console.log("test")
+    let response3 = await dataAPI.getDetailData(token, arrForRequest);
+        console.log(response3.status)
+        if (response3.status === 200) {
+            // success, get auth data
+            console.log('yes3')
+            dispatch(setDetaildata(response3.data))
+        }
+        else {
+            console.log('No3')
+            // {_error: message}));
+        }
     }
 
 export default dataReducer;

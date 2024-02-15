@@ -15,7 +15,7 @@ import { FooterContainer }  from "@components/ContainerFooter";
 
 import  HomeContainer   from "@views/HomePage";
 import  SearchContainer   from "@views/SearchPage/index";
-import  { ResultContainer }  from "@views/ResultPage";
+import  ResultContainer   from "@views/ResultPage";
 import  LoginContainer  from "./views/AuthPage";
 
 

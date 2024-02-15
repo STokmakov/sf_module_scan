@@ -4,13 +4,13 @@ import React from "react";
 import {NavLink} from "react-router-dom";
 
 const Account = (props) => {
-    // "Нигде не сказано откуда брать аватар"
+    console.log(props)
 
     return (
         <div className={css.account}>
             <div className={css.left}>
                 <div className={css.name}>
-                    Алексей А.
+                   { props.name}
                 </div>
                 <div className={css.exit}>
                     <NavLink className={css.logout} onClick={props.logout} to="/">
@@ -26,4 +26,4 @@ const Account = (props) => {
 
 }
 
-export default Account
+export { Account }

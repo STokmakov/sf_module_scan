@@ -13,7 +13,8 @@ class HomeContainer extends React.Component {
 
 const mapStateToProps = (state) => ({
     isAuth: state.token.isAuth,
-    login: state.token.login,
+    generalData: state.token.login,
+    
 });
 
 export default connect(mapStateToProps)(HomeContainer) 
