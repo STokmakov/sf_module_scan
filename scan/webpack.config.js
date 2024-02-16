@@ -51,10 +51,9 @@ module.exports = {
 
   devServer: {
     hot: true, // Включает автоматическую перезагрузку страницы при изменениях
+    historyApiFallback: true,
   },
-
-  
-
+    
   module: {
     rules: [
     { test: /\.(html)$/, use: ['html-loader'] }, // Добавляем загрузчик для html

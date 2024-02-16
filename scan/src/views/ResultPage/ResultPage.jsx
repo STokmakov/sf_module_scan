@@ -12,20 +12,20 @@ import { GeneralResultLoader } from '@components/GeneralResultLoader'
 
 const ResultPage = (props) => {
        
-        const context = useContext(ResultContext)
-        const [countDocs, setCountDocs] = useState(4)
-        const token = props.token
-      
-        const resultGeneralData = props.generalData
         
+        const [countDocs, setCountDocs] = useState(3)
+        
+        const [detailsData, setDetailsData] = useState(props.detail)
+        
+        const token = props.token  
+        const resultGeneralData = props.generalData  
         const resultData = props.data
-      
-        const detailsData = props.detailsData
-        // const setDetailsData = props.setDetailsData
+         
       
         useEffect(() => {
           if (resultData && (+resultData.items.length) > 0) {
             const arrForRequest = []
+            const oldDetailsData = []
       
             if ((+resultData.items.length) < countDocs) {
               for (let i = 0; i < (+resultData.items.length); i++) {
@@ -33,13 +33,15 @@ const ResultPage = (props) => {
               }
             } else {
               for (let i = 0; i < countDocs; i++) {
-                arrForRequest.push(resultData.items[i].encodedId)
-                
-                
+                arrForRequest.push(resultData.items[i].encodedId)                
               }
             }
             const req = async () => {
-              // props.getDetail(token, arrForRequest)              
+              console.log(token, arrForRequest)
+              props.getDetail(token, arrForRequest) 
+              setDetailsData(props.detail)
+              oldDetailsData.push(detailsData)
+              console.log(oldDetailsData)
             }
             req()
           }
@@ -49,6 +51,7 @@ const ResultPage = (props) => {
           const countDocsIterator = 4 // число на которое увеличивается количество записей
           if ((countDocs + countDocsIterator) < (+resultData.items.length)) {
             setCountDocs(countDocs + countDocsIterator)
+            console.log(countDocs,  countDocsIterator)
           }
       
           const docsRest = (+resultData.items.length) - countDocs
@@ -78,18 +81,18 @@ const ResultPage = (props) => {
                  ? []
                  : resultGeneralData.data} />}
              </div>
-             {/* 429 ОШИБКА !!! */}
-             {/* <div className={styles.resultBlock}>
+          
+             <div className={styles.resultBlock}>
                <h2 className={styles.subtitle}>Список документов</h2>
                <ul className={styles.resultList}>
                  {!resultData || +resultData.items.length === 0
                    ? <p></p>
                    : !detailsData
                      ? <GeneralResultLoader />
-                     : detailsData.data.map(item => <ResultItem key={item.ok.id} data={item.ok} />)}
+                     : detailsData.map(item => <ResultItem key={item.ok.id} data={item.ok} />)}
                </ul>
                <button onClick={moreBtnHandler} className={resultData && ((countDocs) >= +resultData.items.length) ? styles.seeMoreBtnHidden : styles.seeMoreBtn}>Показать больше</button>
-            </div> */}
+            </div>
           </main>
         )
       }

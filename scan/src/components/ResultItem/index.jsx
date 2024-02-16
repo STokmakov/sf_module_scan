@@ -1,3 +1,4 @@
+import React from "react";
 import styles from './ResultItem.module.css'
 import cardImgPlaceholder from '../../assets/images/cardImgPlaceholder.svg'
 import { parseDate } from '../../utils/parseDate'

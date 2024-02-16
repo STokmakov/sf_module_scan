@@ -1,3 +1,4 @@
+import React from "react";
 import styles from './ResultItemCategories.module.css'
 
 export function ResultItemCategories({ isAnnouncement, isDigest, isTechNews }) {

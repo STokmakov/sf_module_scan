@@ -17,7 +17,7 @@ const mapStateToProps = (state) => ({
     token: state.token.token,
     data: state.data.data2,
     generalData: state.data.data,
-    detailsData: state.data.data3
+    detail: state.data.detaildata
 });
 
 export default connect(mapStateToProps,{ getDetail })(ResultContainer);

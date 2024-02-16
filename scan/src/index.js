@@ -6,7 +6,8 @@ import { BrowserRouter } from "react-router-dom";
 
 import { ScanApp } from "@/App";
 import { Provider } from 'react-redux';
-import { store } from '@store/store';
+import { persistor, store } from '@store/store';
+import { PersistGate } from 'redux-persist/integration/react';
 
 
 
@@ -15,7 +16,9 @@ root.render(
   
     <Provider store={store}>
       <BrowserRouter>
+        <PersistGate loading={null} persistor={persistor}>
           <ScanApp />
+        </PersistGate>
       </BrowserRouter>
     </Provider>
 
