@@ -1,5 +1,5 @@
-
-.section {
+.carusel {
+    grid-area: carusel;
     padding-top: 105px;
 }
 
@@ -87,9 +87,10 @@
     padding: 112px 16px 0;
 }
 
-@media screen and (max-width: 1439px) {
+@media screen and (max-width: 1024px) {
 
-        .section {
+        .carusel {
+            grid-area: carusel;
             padding-top: 52px;
         }
 
@@ -123,12 +124,4 @@
             min-width: 298px;
             height: 188px;
         }
-
-        .itemImg {
-        }
-
-        .itemText {
-        }
-
-
 }

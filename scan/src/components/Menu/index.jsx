@@ -7,13 +7,11 @@ import styles from "./Menu.module.css";
 
 const Menu = () => {
     return (
-        <div>
-          <nav className={styles.nav}>
-            <NavLink to="/" className={styles.link}>
-              Главная
-            </NavLink>
-            <NavLink className={styles.link}>Тарифы</NavLink>
-            <NavLink className={styles.link}>FAQ</NavLink>
+        <div className={styles.menu}>
+          <nav className={styles.menu_container}>
+            <NavLink to="/" className={styles.link1}> Главная </NavLink>
+            <NavLink className={styles.link2}>Тарифы</NavLink>
+            <NavLink className={styles.link3}>FAQ</NavLink>
           </nav>
           </div>
     )

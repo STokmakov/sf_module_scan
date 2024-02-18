@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 
 import {reduxForm} from "redux-form";
 import {connect} from "react-redux";
-import {login} from "../../store/auth-reducer";
+import {login} from "@store/auth-reducer";
 
 import AuthPage from "./AuthPage";
 

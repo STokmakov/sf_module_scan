@@ -5,8 +5,6 @@ import { ResultSlider } from '@components/ResultSlider'
 import ResultPageImg from '@assets/images/ResultPageImg.svg'
 import { mapArrFunc } from '../../utils/mapArrFunc'
 import { useContext, useEffect, useState } from 'react'
-import ResultContext from '../../context/createContext'
-
 
 import { GeneralResultLoader } from '@components/GeneralResultLoader'
 

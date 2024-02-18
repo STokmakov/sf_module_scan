@@ -1,13 +1,10 @@
 .app {
-  margin: 0 auto;
   display: grid;
-  width: 1200px;
   grid-template-areas: 
   "header" 
-  "search"
   "main"
   "footer";
 
-  grid-template-rows: 150px 4fr 150px;
+  grid-template-rows: 150px 1fr 280px;
   grid-template-columns: 1fr;
 }

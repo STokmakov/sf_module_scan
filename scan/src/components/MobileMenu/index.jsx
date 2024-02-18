@@ -5,7 +5,7 @@ import React, {useRef} from "react";
 import close from "./icon-close.png"
 import logo from "./logo.png"
 import {NavLink} from "react-router-dom";
-// import {Menu} from "../../Menu";
+import {Menu} from "../Menu";
 
 const MobileMenu = (props) => {
     const ref = useRef(null)
@@ -37,15 +37,18 @@ const MobileMenu = (props) => {
                     </div>
                     <nav className={css.menu}>
                         <ul className={css.menuList}>
-                            {/* {
-                                Menu.map((item, key) =>
-                                    <li key={key} className={css.menuItem}>
-                                        <NavLink to={item.link} className={({isActive}) => isActive ? css.menuActive : css.menuNormal}>
-                                            {item.name}
-                                        </NavLink>
+                            {
+                                // Menu.map((item, key) =>
+                                    <li className={css.menuItem}>
+                                       <div> <NavLink to="/" className={({isActive}) => isActive ? css.menuActive : css.menuNormal}> Главная </NavLink> </div>
+                                        <div><NavLink className={({isActive}) => isActive ? css.menuActive : css.menuNormal}>Тарифы</NavLink></div>
+                                       <div> <NavLink className={({isActive}) => isActive ? css.menuActive : css.menuNormal}>FAQ</NavLink></div>
+                                         {/* <NavLink to={item.link} className={({isActive}) => isActive ? css.menuActive : css.menuNormal}>
+                                             {item.name}
+                                         </NavLink> */}
                                     </li>
-                                )
-                            } */}
+                                // )
+                            }
                         </ul>
                     </nav>
                     <div className={css.account}>

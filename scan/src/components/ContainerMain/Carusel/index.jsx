@@ -1,13 +1,13 @@
-import css from './Section2.module.css'
+import css from './Carusel.module.css'
 import React from 'react';
 import {useRef, useState} from "react";
 
-import icon_time from "./icon-time.png"
-import icon_magnifier from "./icon-magnifier.png"
-import icon_shield from "./icon-shield.png"
-import arrow from "./arrow.png"
+import icon_time from "@assets/images/icon-time.png"
+import icon_magnifier from "@assets/images/icon-magnifier.png"
+import icon_shield from "@assets/images/icon-shield.png"
+import arrow from "@assets/images/arrow.png"
 
-const Section2 = () => {
+const Carusel = () => {
     const content = useRef(null)
 
     const [items, setItems] = useState([
@@ -38,7 +38,7 @@ const Section2 = () => {
     }
 
     return (
-        <section className={css.section}>
+        <section className={css.carusel}>
             <h2 className={css.text}>
                 Почему именно мы
             </h2>
@@ -65,4 +65,4 @@ const Section2 = () => {
 
 }
 
-export { Section2 }
+export { Carusel }

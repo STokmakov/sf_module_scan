@@ -1,8 +1,10 @@
+import React from "react";
 import css from './Info.module.css'
-import React, { useEffect, useRef, useState } from "react";
-import axios from "axios";
+
+
 
 const Info = (props) => {
+
 
     return (
         <div className={css.info}>
@@ -28,20 +30,6 @@ const Info = (props) => {
             </tr>
             </tbody>
         </table>
-        <div className={css.mobile}>
-            <div className={css.used}>
-                Использовано компаний
-            </div>
-            <div className={css.usedCount}>
-            {props.usedCompanyCount}
-            </div>
-            <div className={css.limit}>
-                Лимит по компаниям
-            </div>
-            <div className={css.limitCount}>
-            { props.companyLimit } 
-            </div>
-        </div>
     </div>  
  
     )

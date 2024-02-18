@@ -8,9 +8,10 @@
   justify-self: center; 
   align-self: center;
   grid-template-areas: 
-  "home"
-  "search"
-  "auth";
+  "service"
+  "carusel";
+  /* "search"
+  "auth"; */
 
   grid-template-rows: 1fr;
   grid-template-columns: 1fr;
