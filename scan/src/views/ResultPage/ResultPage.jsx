@@ -10,11 +10,8 @@ import { GeneralResultLoader } from '@components/GeneralResultLoader'
 
 const ResultPage = (props) => {
        
-        
-        const [countDocs, setCountDocs] = useState(3)
-        
+        const [countDocs, setCountDocs] = useState(2)
         const [detailsData, setDetailsData] = useState(props.detail)
-        
         const token = props.token  
         const resultGeneralData = props.generalData  
         const resultData = props.data
@@ -46,7 +43,7 @@ const ResultPage = (props) => {
         }, [resultData, countDocs])
       
         const moreBtnHandler = () => {
-          const countDocsIterator = 4 // число на которое увеличивается количество записей
+          const countDocsIterator = 2 // число на которое увеличивается количество записей
           if ((countDocs + countDocsIterator) < (+resultData.items.length)) {
             setCountDocs(countDocs + countDocsIterator)
             console.log(countDocs,  countDocsIterator)
@@ -94,5 +91,4 @@ const ResultPage = (props) => {
           </main>
         )
       }
-      
       export { ResultPage }

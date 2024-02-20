@@ -19,5 +19,9 @@ export const authAPI = {
     
     login(login, password) {
         return instance.post(`account/login`, {login, password})
+        .catch((e) => {
+            console.log("Failed login...");
+            return e;
+        })
     }
 }

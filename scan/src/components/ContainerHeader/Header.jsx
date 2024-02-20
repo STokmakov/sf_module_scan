@@ -22,7 +22,7 @@ const Header = (props) => {
 
             {props.isAuth ? <InfoContainer /> : null }
 
-            <MobileMenu /> 
+            <MobileMenu isAuth={props.isAuth} logout={props.logout}/> 
 
             {props.isAuth ? <AccountContainer /> : <Login />}
 

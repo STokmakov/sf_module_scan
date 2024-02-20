@@ -11,12 +11,12 @@ const LoginReduxForm = reduxForm({form: 'login'})(AuthPage);
 
 const Login = (props) => {
   const onSubmit = (formData) => {
-      props.login(formData.login, formData.password);
-  }
-
+      console.log(props.login(formData.login, formData.password).then(result => alert(result)));
+      }
+  
   if (props.isAuth) {
     return <Navigate to={"/"} />
-  }
+  } 
 
   return (
     <div>

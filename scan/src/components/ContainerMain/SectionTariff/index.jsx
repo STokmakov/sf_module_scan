@@ -1,12 +1,12 @@
-import css from './Section4.module.css'
+import css from './SectionTariff.module.css'
 import Tariff from "./Tariff/Tariff";
 import React from 'react';
 
-const Section4 = ({token}) => {
+const SectionTariff = (props) => {
 
     const tariffs = [
         {
-            current: token,
+            current: props.isAuth,
             background: '#FFB64F',
             color: '#000000',
             title: 'Beginner',
@@ -72,4 +72,4 @@ const Section4 = ({token}) => {
 
 }
 
-export { Section4 }
+export { SectionTariff }

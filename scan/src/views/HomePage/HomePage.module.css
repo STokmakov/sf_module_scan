@@ -9,11 +9,12 @@
   align-self: center;
   grid-template-areas: 
   "service"
-  "carusel";
-  /* "search"
-  "auth"; */
+  "carusel"
+  "mainimage"
+  "mainimagemobile"
+  "sectiontariff";
 
-  grid-template-rows: 1fr;
+  grid-template-rows: 2fr 1fr 1fr 4fr;
   grid-template-columns: 1fr;
 
 }

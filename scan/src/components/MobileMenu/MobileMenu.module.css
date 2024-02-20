@@ -1,4 +1,6 @@
 .mobileMenu {
+    grid-area: menu;
+    align-self: center;
     display: none;
     position: absolute;
     top: 34px;
@@ -10,23 +12,27 @@
     position: absolute;
     left: 0;
     right: 0;
-    z-index: 100;
+    z-index: 10;
 }
 
 .panel {
     display: none;
     height: 494px;
-    background-color: var(--base-green);
+    background-color: var(--green-bg-color);
 }
 
 .head {
     position: relative;
-    height: 100px;
+    height: auto;
+
 }
 
 .logo {
     position: absolute;
     left: 15px;
+    width: 20%;
+    height: 200px;
+    
 }
 
 .close {
@@ -52,7 +58,7 @@
 .menuItem a {
     color: var(--base-white);
     text-decoration: none;
-    font-size: 16px;
+    font-size: 36px;
     letter-spacing: 0.16px;
 }
 
@@ -73,7 +79,7 @@
 }
 
 .account {
-    padding-top: 74px;
+    padding-top: 64px;
     text-align: center;
 }
 
@@ -86,21 +92,21 @@
 }
 
 .logoutLink {
-    color: var(--base-black);
+    color: var(--black-bg-color);
     border-radius: 5px;
-    background: var(--add-green);
-    padding: 14px 118px;
-    font-size: 20px;
+    background: var(--green-bg-color);
+    padding: 14px 78px;
+    font-size: 40px;
     letter-spacing: 0.2px;
     text-decoration: none;
 }
 
 .logoutLink:hover {
-    color: var(--base-black);
+    color: var(--black-bg-color);
 }
 
 .logoutLink:visited {
-    color: var(--base-black);
+    color: var(--black-bg-color);
 }
 
 .register {
@@ -108,18 +114,18 @@
 }
 
 .registerLink {
-    color: var(--base-white);
+    color: var(--white-bg-color);
     text-decoration: none;
-    font-size: 16px;
+    font-size: 36px;
     letter-spacing: 0.16px;
 }
 
 .registerLink:hover {
-    color: var(--base-white);
+    color: var(--white-bg-color);
 }
 
 .registerLink:visited {
-    color: var(--base-white);
+    color: var(--white-bg-color);
 }
 
 .login {
@@ -127,28 +133,30 @@
 }
 
 .loginLink {
-    color: var(--base-black);
+    color: var(--black-bg-color);
     border-radius: 5px;
-    background: var(--add-green);
-    padding: 14px 118px;
-    font-size: 20px;
+    background: var(--green-bg-color);
+    padding: 14px 78px;
+    font-size: 40px;
     letter-spacing: 0.2px;
     text-decoration: none;
 }
 
 .loginLink:hover {
-    color: var(--base-black);
+    color: var(--black-bg-color);
 }
 
 .loginLink:visited {
-    color: var(--base-black);
+    color: var(--black-bg-color);
 }
 
 @media screen and (max-width: 1024px) {
     .mobileMenu {
+
         display: block;
     }
     .mobileContainer {
         display: block;
+
     }
 }
